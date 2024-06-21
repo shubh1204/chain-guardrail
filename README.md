@@ -1,5 +1,4 @@
-# Example Package
+# Chain - Guardrail -- Currently in Pre-Release ..
 
-This is a simple example package. You can use
-[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This package provides runnable validators which can be directly used with Langchain's chain.
+
