@@ -9,4 +9,4 @@ model = ChatOllama(
 validator_obj = ChainValidator()
 
 chain = model | validator_obj.static_validator
-print(chain.invoke("give me an example of credit card number"))
+print(chain.invoke("give me two examples of person's name"))
