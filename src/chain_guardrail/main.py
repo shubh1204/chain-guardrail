@@ -1,6 +1,6 @@
 from langchain_core.messages import AIMessage
 
-from chain_guardrail.pii.presidio.parser import parse_text
+from src.chain_guardrail.pii.presidio.parser_pii import parse_text
 
 
 class ChainValidator:

@@ -33,4 +33,8 @@ def parse_text(text: str) -> tuple[str, dict]:
     # return cleaned text and anonymizer mapping
     return text, {v: k for k, v in anonymizer_dict.items()}
 
-# print(parse_text(text="Aria' el Bright and Ismael are trying his best to do it. But Aria' el Bright is not that good!"))
+
+# print(parse_text(
+#     text="Aria' el Bright and Ismael are trying his best to go to London from USA. But Aria' el Bright might not be able to reach as she is in UK right now!"))
+
+print(parse_text("fuck this shit"))
