@@ -9,4 +9,4 @@ model = ChatOllama(
 validator_obj = ChainValidator()
 
 chain = model | validator_obj.static_validator
-print(chain.invoke("Return the following text as it is : Text : fuck this shit"))
+print(chain.invoke("Return the following text as it is : Text : Ronan said fuckthis shit"))

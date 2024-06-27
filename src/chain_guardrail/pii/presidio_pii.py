@@ -1,7 +1,7 @@
 from presidio_analyzer import AnalyzerEngine
 
 
-def parse_text(text: str) -> tuple[str, dict]:
+def pii_parser(text: str) -> tuple[str, dict]:
     anonymizer_dict = {}
     entity_count_dict = {}
     processed_entities = []
@@ -37,4 +37,4 @@ def parse_text(text: str) -> tuple[str, dict]:
 # print(parse_text(
 #     text="Aria' el Bright and Ismael are trying his best to go to London from USA. But Aria' el Bright might not be able to reach as she is in UK right now!"))
 
-print(parse_text("fuck this shit"))
+# print(parse_text("fuck this shit"))

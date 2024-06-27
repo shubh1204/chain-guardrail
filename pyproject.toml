@@ -1,6 +1,6 @@
 [project]
 name = "chain_guardrail"
-version = "0.0.4"
+version = "0.0.8"
 authors = [
   { name="Shubham Gupta", email="shubham.mdsk@gmail.com" },
 ]
