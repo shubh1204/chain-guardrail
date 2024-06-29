@@ -9,4 +9,5 @@ model = ChatOllama(
 validator_obj = ChainValidator()
 
 chain = model | validator_obj.static_validator
-print(chain.invoke("Return the following text as it is : Text : Ronan said fuckthis shit"))
+print(chain.invoke(
+    "Return the following text as it is : TEXT:  You are an Asshole. He was calling me an ASSHole, hahaha. My name is Rio Asher-James and my mobile is +91-7053654462"))
