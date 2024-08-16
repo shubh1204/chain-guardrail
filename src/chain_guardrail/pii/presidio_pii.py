@@ -1,6 +1,5 @@
 import re
 
-import spacy_transformers
 from presidio_analyzer import AnalyzerEngine
 from presidio_analyzer.nlp_engine import NlpEngineProvider
 

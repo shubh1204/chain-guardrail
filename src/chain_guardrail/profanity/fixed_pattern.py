@@ -1,7 +1,7 @@
 import copy
 import re
 
-from chain_guardrail.profanity.bad_words_list import bad_words
+from src.chain_guardrail.profanity.bad_words_list import bad_words
 
 
 def profanity_parser(text: str) -> tuple[str, dict]:

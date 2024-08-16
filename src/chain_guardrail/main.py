@@ -1,12 +1,11 @@
 from langchain_core.messages import AIMessage
 from transformers import pipeline
-import spacy_transformers
 from presidio_analyzer import AnalyzerEngine
 from presidio_analyzer.nlp_engine import NlpEngineProvider
 
-from chain_guardrail.pii.presidio_pii import pii_parser
-from chain_guardrail.profanity.fixed_pattern import profanity_parser
-from chain_guardrail.toxicity.large import toxicity_parser
+from src.chain_guardrail.pii.presidio_pii import pii_parser
+from src.chain_guardrail.profanity.fixed_pattern import profanity_parser
+from src.chain_guardrail.toxicity.large import toxicity_parser
 
 
 class ChainValidator:
@@ -38,11 +37,11 @@ class ChainValidator:
 
     def static_validator(self, ai_message: AIMessage) -> tuple[str, dict]:
         """Parse the AI message."""
-        filtered_text, anonymizer_dict = toxicity_parser(ai_message.content, self.toxicity_pipe)
-        self.anonymizer_dict['toxicity'] = anonymizer_dict
-
-        filtered_text, anonymizer_dict = pii_parser(filtered_text, self.presidio_pii_pipe)
+        filtered_text, anonymizer_dict = pii_parser(ai_message.content, self.presidio_pii_pipe)
         self.anonymizer_dict['pii'] = anonymizer_dict
+
+        filtered_text, anonymizer_dict = toxicity_parser(filtered_text, self.toxicity_pipe)
+        self.anonymizer_dict['toxicity'] = anonymizer_dict
 
         filtered_text, anonymizer_dict = profanity_parser(filtered_text)
         self.anonymizer_dict['profanity'] = anonymizer_dict
