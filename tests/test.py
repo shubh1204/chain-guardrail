@@ -1,5 +1,5 @@
 from langchain_community.chat_models import ChatOllama
-from src.chain_guardrail.main import ChainValidator
+from chain_guardrail.main import ChainValidator
 
 model = ChatOllama(
     base_url='http://localhost:11434',

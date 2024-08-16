@@ -4,9 +4,9 @@ import spacy_transformers
 from presidio_analyzer import AnalyzerEngine
 from presidio_analyzer.nlp_engine import NlpEngineProvider
 
-from src.chain_guardrail.pii.presidio_pii import pii_parser
-from src.chain_guardrail.profanity.fixed_pattern import profanity_parser
-from src.chain_guardrail.toxicity.large import toxicity_parser
+from chain_guardrail.pii.presidio_pii import pii_parser
+from chain_guardrail.profanity.fixed_pattern import profanity_parser
+from chain_guardrail.toxicity.large import toxicity_parser
 
 
 class ChainValidator:
@@ -14,6 +14,7 @@ class ChainValidator:
         print('Loading Model ...')
         # TODO: load model on gpu if available
         self.toxicity_pipe = pipeline("text-classification", model="textdetox/xlmr-large-toxicity-classifier")
+        self.gender_bias_pipe = pipeline("text-classification", model="monologg/koelectra-base-gender-bias")
 
         # load spacy trf model
         # Create configuration containing engine name and models
